@@ -1,4 +1,4 @@
-## Interface: 40401
+## Interface: 40402
 ## Author: Toodo
 ## Title: Chefs Hat Cata
 ## Notes: Automatically equip 'Chef's Hat' if the Chef enters the kitchen (Cooking TradeSkill).
