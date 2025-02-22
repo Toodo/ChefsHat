@@ -8,5 +8,3 @@ Takes Chef's hat off and re-equips your helm after the cooking window is closed
 
 
 <a href="https://curseforge.com/wow/addons/chefs-hat-cata" target="_blank">Chefs Hat Cata on Curseforge</a>
-
-curseforge Project ID 1114660
