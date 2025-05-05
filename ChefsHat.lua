@@ -13,20 +13,44 @@ end
 
 local function EquipChefsHatIfNeeded()
     local helmSlot = GetInventoryItemID("player", 1)
+
+    if helmSlot == chefsHatId then return end
+
     if helmSlot and helmSlot ~= chefsHatId then
         previousHelmId = helmSlot
-        EquipItemByName(chefsHatId)
+    end
+
+    for bag = -1, 11 do
+        local slots = C_Container.GetContainerNumSlots(bag)
+        for slot = 1, slots do
+            local itemID = C_Container.GetContainerItemID(bag, slot)
+            if itemID == chefsHatId then
+                C_Container.PickupContainerItem(bag, slot)
+                EquipCursorItem(1)
+                return
+            end
+        end
     end
 end
 
 local function RestorePreviousHelm()
     if previousHelmId then
-        EquipItemByName(previousHelmId)
-        previousHelmId = nil
+        for bag = -1, 11 do
+            local slots = C_Container.GetContainerNumSlots(bag)
+            for slot = 1, slots do
+                local itemID = C_Container.GetContainerItemID(bag, slot)
+                if itemID == previousHelmId then
+                    C_Container.PickupContainerItem(bag, slot)
+                    EquipCursorItem(1)
+                    previousHelmId = nil
+                    return
+                end
+            end
+        end
     end
 end
 
-local function onEvent(self, event, arg1, arg2)
+local function onEvent(self, event, arg1)
     if event == "TRADE_SKILL_SHOW" then
         cookingWindowOpened = true
         if not isCastingCookingFire and hasCookingProfession() then
