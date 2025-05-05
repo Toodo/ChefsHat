@@ -2,6 +2,6 @@
 ## Author: Toodo
 ## Title: Chefs Hat Cata
 ## Notes: Automatically equip 'Chef's Hat' if the Chef enters the kitchen (Cooking TradeSkill).
-## Version: 1.0.1
+## Version: 1.0.2
 
 ChefsHat.lua
