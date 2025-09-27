@@ -1,7 +1,8 @@
-## Interface: 50500
+## Interface: 50501
 ## Author: Toodo
 ## Title: Chefs Hat
 ## Notes: Automatically equip 'Chef's Hat' if the Chef enters the kitchen (Cooking TradeSkill).
-## Version: 2.0.0
+## Version: 2.0.1
 
 ChefsHat.lua
+
